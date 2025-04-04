@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Visualization</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+        }
+        #common-locations {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            z-index: 1000;
+        }
+        #locations-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            user-select: none;
+        }
+        #locations-list li {
+            cursor: pointer;
+        }
+        #locations-list li:hover {
+            color: #00ff00; 
+        }
+    </style>
+</head>
+<body>
+    <div id="tooltip"></div>
+    <div id="common-locations">
+        <h3>Most Common Locations</h3>
+        <ul id="locations-list"></ul>
+    </div>
+    <script type="module" src="visualization.js"></script>
+</body>
+</html>

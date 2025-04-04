@@ -1,0 +1,15 @@
+# Используем официальный образ Python
+FROM python:3.9-slim
+
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Копируем файлы проекта
+COPY sender.py .
+COPY ip_addresses.csv .
+
+# Устанавливаем зависимости
+RUN pip install requests
+
+# Указываем команду для запуска sender.py
+CMD ["python3", "sender.py"]
